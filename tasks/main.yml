@@ -30,7 +30,7 @@
 
 - name: install required npm packages to keep node running
   npm: name={{item}} global=yes 
-  with_items: nodeapp_npm
+  with_items: "{{ nodeapp_npm }}"
         
 - name: Does the nodejs application folder exist?
   command: ls {{nodeapp_chdir}}/{{nodeapp_dir}}/{{nodeapp_file}}
